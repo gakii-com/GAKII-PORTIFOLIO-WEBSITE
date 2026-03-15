@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 224 76% 33%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 226 47% 87%;
+
+    --accent: 213 94% 68%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 217 91% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 53%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 213 94% 68%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 217 33% 25%;
+    --sidebar-ring: 217 91% 53%;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(224 76% 33%), hsl(217 91% 53%), hsl(213 94% 68%));
+    --glow-primary: 0 0 30px -5px hsl(217 91% 53% / 0.4);
+    --glow-accent: 0 0 20px -5px hsl(213 94% 68% / 0.3);
+    --surface-glass: hsl(217 33% 17% / 0.6);
+
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(217 91% 53%), hsl(213 94% 68%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-card {
+    box-shadow: var(--glow-primary);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .glow-card:hover {
+    box-shadow: 0 0 40px -5px hsl(213 94% 68% / 0.5);
+  }
+
+  .glass {
+    background: var(--surface-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glow-border {
+    border: 1px solid hsl(217 33% 25%);
+    transition: border-color 0.2s ease;
+  }
+
+  .glow-border:hover {
+    border-color: hsl(213 94% 68% / 0.5);
+  }
+}
